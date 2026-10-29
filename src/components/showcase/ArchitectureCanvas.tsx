@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { ReactFlow, Background, Controls, NodeMouseHandler } from '@xyflow/react';
+import { ReactFlow, Background, Controls, NodeMouseHandler, Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { initialNodes, initialEdges } from '@/data/nodesData';
 import { NodeDetailDrawer } from './NodeDetailDrawer';
@@ -16,8 +16,8 @@ export function ArchitectureCanvas() {
   return (
     <div id="architecture-canvas" className="relative w-full h-[650px] bg-zinc-950/90 border-y border-zinc-800">
       <ReactFlow
-        nodes={initialNodes}
-        edges={initialEdges}
+        nodes={initialNodes as Node[]}
+        edges={initialEdges as Edge[]}
         onNodeClick={onNodeClick}
         fitView
         panOnScroll={false}

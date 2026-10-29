@@ -1,4 +1,5 @@
 export interface NodeData {
+  [key: string]: unknown;
   label: string;
   role: string;
   description: string;
